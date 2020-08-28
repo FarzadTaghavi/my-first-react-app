@@ -1,10 +1,8 @@
-// src/App.js;
 import React from "react";
 import "./App.css";
+
 import Title from "./components/Title";
-import Pokemon from "./components/Pokemon/Pokemon";
-import LikeCounter from "./components/LikeCounter";
-import LikeButton from "./components/LikeButton";
+import Pokemon from "./components/Pokemon";
 
 const all_pokemon = [
   {
@@ -39,25 +37,16 @@ const all_pokemon = [
 
 function App() {
   return (
-    <main className="container mt-4">
-      <Title content="Pokemon App" />
-      <div className="row">
-        {all_pokemon.map((pokemon) => (
-          <div className="col-md-6 col-lg-4">
-            <Pokemon
-              name={pokemon.name}
-              weight={pokemon.weight}
-              awesome={pokemon.awesome}
-              terrifying={pokemon.terrifying}
-              abilities={pokemon.abilities}
-            />
-            <Title content="Likes" />
-            <LikeCounter />
-            <LikeButton />
-          </div>
-        ))}
-      </div>
-    </main>
+    <div className="App">
+      <main>
+        <Title content="Some Simple Title" />
+        <ul>
+          {props.abilities.map((ability) => {
+            return <li>{ability}</li>;
+          })}
+        </ul>
+      </main>
+    </div>
   );
 }
 

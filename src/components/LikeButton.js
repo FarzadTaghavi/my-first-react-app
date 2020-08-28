@@ -5,7 +5,7 @@ export default function LikeButton() {
   const [buttonText, changer] = useState(initialText);
 
   const changeText = () => {
-    changer("You've liked this!");
+    changer("You've liked this!!");
   };
 
   return (
